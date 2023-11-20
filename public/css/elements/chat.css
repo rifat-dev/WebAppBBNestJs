@@ -1,0 +1,78 @@
+.help-chat {
+    margin: 40px 0;
+}
+
+.help-chat__header h1 {
+    text-align: center;
+    font-size: 45px;
+}
+
+.help-chat__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.help-chat__footer p {
+    font-size: 20px;
+    margin: 3px 0;
+}
+
+.chatbox {
+    display: block;
+    position: relative;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 10px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #eee;
+    font-size: 17px;
+}
+
+.chatbox__messages {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    color: white;
+    font-family: ALS-Story-Regular;
+
+}
+.chatbox__messageBox {
+    width: 100%;
+    margin-top: 5px;
+    position: relative;
+}
+
+.chatbox__message {
+    position: relative;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 15px;
+    cursor: default;
+    background: #0084ff;
+    transition: all 0.12s;
+    margin: 3px 0;
+}
+
+.chatbox__inputPanel {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbox__input {
+    font-family: ALS-Story-Regular;
+    font-size: 1em;
+    width: 100%;
+    border: none;
+    background: #f3f3f3;
+    margin: 0 10px;
+    padding: 5px 15px;
+    color: #444;
+    border-radius: 15px;
+    box-sizing: border-box;
+}

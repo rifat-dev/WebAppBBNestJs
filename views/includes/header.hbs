@@ -1,0 +1,22 @@
+<header class="header">
+  <a href="/" class="header__logo">
+    <img src="/img/lg1.png" alt="Логотип проекта Bed and Bathroom">
+  </a>
+
+  <div class="header__block-btn">
+    <a href='/host'>Сдайте жильё</a>
+    {{#if isLoggedIn}}
+      <button id="header__btn-enter" class="btn-base"> {{ userName }} </button>
+    {{else}}
+      <button id="header__btn-enter" class="btn-base"> Войти </button>
+    {{/if}}
+    <div id="header__dropdown-id" class="header__dropdown-content">
+      <a id="sign-in__button">Войти</a>
+      <a href='/host'>Сдайте жильё</a>
+      <a href="/api">API</a>
+      <a href="/help-chat"><strong>Помощь</strong></a>
+    </div>
+  </div>
+</header>
+{{> auth }}
+<script src="/js/header.js"></script>

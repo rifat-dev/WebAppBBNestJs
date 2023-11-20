@@ -1,0 +1,89 @@
+.btn-sign {
+    display: block;
+    color: #ffffff;
+    background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
+    text-decoration: none;
+    margin: 20px 0;
+    padding: 15px 15px;
+    border-radius: 15px;
+    position: relative;
+    font-family: ALS-Story-Regular;
+    transition: color 100ms;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.5);
+    padding-left: 64px;
+}
+
+.btn-sign:hover,
+.btn-sign:focus{
+    background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 72%, #FF0066 100%);
+}
+
+.btn-sign:active{
+    box-shadow: 0 3px 15px rgba(0,0,0,0.0);
+}
+
+.btn-sign .fa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 50px;
+    height: 100%;
+    text-align: center;
+    line-height: 2.8;
+    border-radius: 15px 0 0 15px;
+}
+
+.form .fieldset {
+    border: none;
+    padding: 0;
+    margin: 20px 0;
+    position: relative;
+}
+
+.sign {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(250, 250, 250, 0.3);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.sign__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 800px;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 25px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: flex;
+}
+
+.sign__left-block,
+.sign__right-block
+{
+    width: 50%;
+    padding: 30px 50px;
+}
+
+.sign__right-block h2 {
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.sign__form {
+    margin-top: 20px;
+}
+
+.sign__form fieldset {
+    border: none;
+}

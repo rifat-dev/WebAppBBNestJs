@@ -1,0 +1,124 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["filterJson"]
+}
+
+model Tenant {
+  id            Int       @id @default(autoincrement())
+  password      String
+  name          String
+  surname       String
+  phone_number  String
+  email         String    @unique
+  rating        Float     @default(4.0)
+  created_at    DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
+  profile_photo String[]
+  reviews       Review[]
+  booked        Booking[]
+}
+
+model Host {
+  id            Int      @id @default(autoincrement())
+  password      String
+  name          String
+  surname       String
+  phone_number  String
+  email         String   @unique
+  rating        Float    @default(4.0)
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  profile_photo String[]
+  Accommodation Accommodation[]
+  Booking       Booking[]
+}
+
+model Accommodation {
+  id                 Int        @id @default(autoincrement())
+  host               Host       @relation(fields: [host_id], references: [id])
+  host_id            Int
+  created_at         DateTime   @default(now())
+  updated_at         DateTime   @updatedAt
+  title              String
+  description        String
+  type_accommodation String
+  location           Json
+  max_guests         Int        @default(1)
+  max_child          Int        @default(0)
+  approved           Boolean    @default(false)
+  staff              Staff      @relation(fields: [check_staff_id], references: [id])
+  check_staff_id     Int
+  photo              String[]
+  rating             Float      @default(4.0)
+  cost_night         Float
+  reviews            Review[]
+  available          Boolean    @default(false)
+  history            Booking[]
+  calendar_rental    Json?
+}
+
+model Booking {
+  id               Int           @id @default(autoincrement())
+  accommodation    Accommodation @relation(fields: [accommodation_id], references: [id])
+  accommodation_id Int
+  host             Host          @relation(fields: [host_id], references: [id])
+  host_id          Int
+  tenant           Tenant        @relation(fields: [tenant_id], references: [id])
+  tenant_id        Int
+  tenant_comment   String?
+  nights           Int
+  total_cost       Float
+  status           Boolean       @default(false)
+  date_start       String
+  date_end         String
+}
+
+model Review {
+  id               Int           @id @default(autoincrement())
+  author           Tenant        @relation(fields: [author_id], references: [id])
+  author_id        Int
+  created_at       DateTime      @default(now())
+  updated_at       DateTime      @updatedAt
+  title            String
+  content          String
+  images           String[]
+  rating           Float @default(0)
+  accommodation    Accommodation @relation(fields: [accommodation_id], references: [id])
+  accommodation_id Int
+}
+
+model Staff {
+  id              Int             @id @default(autoincrement())
+  password        String
+  name            String
+  surname         String
+  phone_number    String
+  email           String          @unique
+  valid           Boolean         @default(false)
+  role            Role            @default(INTERNSHIP)
+  history_actions Json
+  checked_accommodation   Accommodation[]
+}
+
+enum Role {
+  INTERNSHIP
+  SUPPORT
+  INSPECTOR
+  ADMIN
+}
+
+model Image {
+    id              Int             @id @default(autoincrement())
+    name            String
+    data            Bytes
+    description     String?
+}

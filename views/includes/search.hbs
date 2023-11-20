@@ -1,0 +1,63 @@
+<form action="#" method="get" name="search-available-homes" class="search-form">
+  <div class="search-form__city">
+    <span>Местоположение:</span>
+    <div class="search-form__input-city">
+        <input required type="text" name="city" placeholder="Куда едете?">
+      </div>
+  </div>
+  <span class="search-form__vertical-line"></span>
+  <div class="search-form__date">
+    <div class="search-form__input-checkin">
+        <div class="checkin-text">Прибытие</div>
+        <input type="date" name="date_start" min="2021-01-01" max="2023-01-01" required>
+      </div>
+    <div class="search-form__input-checkout">
+        <div class="checkout-text">Выезд</div>
+        <input type="date" name="date_end" min="2021-01-01" max="2023-01-01" required>
+      </div>
+  </div>
+  <span class="search-form__vertical-line"></span>
+  <div class="search-form__quantity-people">
+    <div class="search-form__input-adults">
+        <div class="adults-span">Взрослые</div>
+        <select class="adults" name="max_guests">
+          <option value="1" selected="selected">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+        </select>
+      </div>
+
+    <div class="search-form__input-children">
+        <div class="children-span">Дети</div>
+        <select class="children" name="max_child">
+          <option value="0" selected="selected">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+  </div>
+  <button type="submit" id="search-form__submit-btn" class="btn-base search-form__btn-base">
+    <i class="fa fa-search" aria-hidden="true"></i>
+    Искать
+  </button>
+</form>
+<script src="/js/search.js"></script>

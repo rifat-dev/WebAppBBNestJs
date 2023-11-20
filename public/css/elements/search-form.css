@@ -1,0 +1,107 @@
+.search-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 25px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+    font-family: ALS-Story-Bold;
+    padding: 10px 20px;
+    color: #222222;
+    min-width: 310px;
+}
+
+.search-form input, .search-form select {
+    margin-top: 5px;
+    background-color: #EFEFEF50;
+
+}
+
+.search-form__vertical-line {
+    background-color: #aaaaaa;
+    height: 40px;
+    width: 1px;
+    margin: 0 2px;
+}
+
+.search-form__city, .search-form__date, .search-form__quantity-people {
+    padding: 5px 0;
+    margin: 0 5px;
+}
+
+.search-form__date {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-form__input-checkin {
+    margin-right: 10px;
+}
+
+.search-form__quantity-people {
+    display: flex;
+}
+
+.search-form__input-adults {
+    margin-right: 10px;
+}
+
+@media (max-width: 1076px) {
+    .search-form__btn-base {
+        margin-top: 10px;
+        width: 50%;
+        font-size: 20px;
+        padding: 0;
+    }
+    .search-form {
+        justify-content: center;
+        padding: 10px;
+        font-size: 21px;
+    }
+
+    .search-form input, .search-form select {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 895px) {
+    .search-form__btn-base {
+        margin-top: 20px;
+        width: 70%;
+        font-size: 25px;
+        padding: 0;
+        height: 55px;
+    }
+
+    .search-form__vertical-line {
+        display: none;
+    }
+    .search-form {
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        font-size: 25px;
+    }
+
+    .search-form input, .search-form select {
+        font-size: 25px;
+    }
+
+    .search-form__city, .search-form__date, .search-form__quantity-people {
+        border-bottom: #aaaaaa70 2px solid;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 770px) {
+    .search-form__date {
+        display: block;
+        padding: 10px 40px;
+    }
+    .search-form__input-checkin {
+        margin: 5px 0px;
+        align-content: center;
+    }
+}

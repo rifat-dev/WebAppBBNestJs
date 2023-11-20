@@ -1,0 +1,47 @@
+.block-help-1 {
+    padding: 50px 147px;
+    background-image: url("../img/im4.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 57%;
+}
+
+.block-help-1__body {
+    position: relative;
+    top: 30%;
+    color: white;
+}
+
+@media (max-width: 895px) {
+    .block-help-1 {
+        padding: 30px 100px;
+        height: 60%;
+        background-image: url("../img/im4-blur.jpg");
+    }
+
+    .block-help-1__body {
+        top: 10%;
+    }
+
+    .block-help-1 h1 {
+        text-align: center;
+    }
+
+    .block-help-1 p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .block-help-1 {
+        padding: 30px;
+        height: 40%;
+    }
+}
+
+@media (max-width: 470px) {
+    .block-help-1 {
+        padding: 15px;
+    }
+}

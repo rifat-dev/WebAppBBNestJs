@@ -1,0 +1,11 @@
+.search-page__content {
+	padding: 30px 147px;
+}
+
+.search-page__items-list {
+	display: flex;
+	flex-wrap: wrap;
+	width: 55%;
+	flex-direction: column;
+	align-items: center;
+}

@@ -1,0 +1,25 @@
+<div class='help-chat'>
+
+  <div class='help-chat__header'>
+    <h1>Чат</h1>
+  </div>
+  <div class="chatbox" id="app">
+    <div class="chatbox__messages">
+      <div id="messages" class="chatbox__messageBox">
+      </div>
+    </div>
+    <div class="chatbox__inputPanel"><input id="message" class="chatbox__input" v-model="newMessage" @keyup.enter="send" placeholder="Задай вопрос:" />
+      <button onclick="handleSubmitNewMessage()" class="btn-base">Send</button>
+    </div>
+  </div>
+  <div class='help-chat__footer'>
+    <p>В каких странах работает?</p>
+    <p>Как работает поиск доступного жилья?</p>
+    <p>Как выбрать цену за жильё?</p>
+    <p>От чего зависит цена?</p>
+    <p>Как проходит оплата?</p>
+  </div>
+
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/help-chat.js"></script>
